@@ -1,0 +1,40 @@
+_format_version: "2.1"
+
+services:
+  - name: me
+    url: http://backend:8090/users/me
+    routes:
+      - name: me
+        paths: 
+          - /api/me
+          
+  - name: register
+    url: http://backend:8090/register
+    routes:
+      - name: register
+        paths: 
+          - /api/register
+          
+  - name: users
+    url: http://backend:8090/users
+    routes:
+      - name: users
+        paths: 
+          - /api/users 
+          
+  - name: posts
+    url: http://backend:8090/posts
+    routes:
+      - name: posts
+        paths: 
+          - /api/posts          
+          
+plugins:    
+  - name: cors
+    config:
+      origins: 
+       - "*"
+
+  - name: bot-detection
+
+  - name: prometheus
